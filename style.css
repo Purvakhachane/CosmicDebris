@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0f1e 0%, #0b1525 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', 'Orbitron', monospace;
+    touch-action: none;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+canvas {
+    border-radius: 24px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(0, 255, 255, 0.2), 0 0 0 4px rgba(0, 0, 0, 0.3);
+    cursor: none;
+    background: radial-gradient(circle at 30% 20%, #0f172a, #030712);
+    display: block;
+}
+
+.info-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 12px 28px;
+    border-radius: 60px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.score-box, .best-box {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.score-box span, .best-box span {
+    color: #7dd3fc;
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.score-box {
+    color: #facc15;
+    text-shadow: 0 0 5px #facc15;
+}
+
+.best-box {
+    color: #4ade80;
+    text-shadow: 0 0 3px #4ade80;
+}
+
+.controls-hint {
+    display: flex;
+    gap: 24px;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-family: monospace;
+}
+
+button {
+    background: #0f212e;
+    border: 1px solid #2dd4bf;
+    color: #2dd4bf;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background: #2dd4bf;
+    color: #0a0f1e;
+    box-shadow: 0 0 12px #2dd4bf;
+    transform: scale(1.02);
+}
+
+@media (max-width: 550px) {
+    .score-box, .best-box { font-size: 1.2rem; }
+    .info-panel { gap: 20px; padding: 8px 20px; }
+    .controls-hint { font-size: 0.6rem; gap: 12px; }
+}
